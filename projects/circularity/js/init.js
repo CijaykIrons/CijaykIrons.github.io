@@ -32,7 +32,7 @@ var circles = [];
     }
 
         // TODO 3 / 7 : Call the drawCircle() function 
-    for (var i = 0; i < 10; i = i + 1) {
+    for (var i = 0; i < 100; i = i + 1) {
         drawCircle();
     }
 
@@ -54,10 +54,10 @@ var circles = [];
  
             // TODO 8 : Iterate over the array
            for (var i = 0; i < circles.length; i++) {
-    var eachValue = circles[i];
-    physikz.updatePosition(eachCircle);
-    game.checkCirclePosition(eachCircle);
-}
+                var eachValue = circles[i];
+                physikz.updatePosition(eachValue);
+                game.checkCirclePosition(eachValue);
+        }               
             
         }
     
@@ -74,10 +74,15 @@ var circles = [];
             } 
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            if ( circle.x > canvas.height ){
-                circle.x = 0;
+            if ( circle.y > canvas.height ){
+                circle.y = 0;
             };
-
+            if (circle.x < 0){
+                circle.x = canvas.width;
+            }
+            if (circle.y < 0){
+                circle.y = canvas.height
+            }
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
         }
         
