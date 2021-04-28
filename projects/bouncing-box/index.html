@@ -67,13 +67,12 @@
 			turn it around! 
 			*/
 			function update() {
-                 positionx = positionx + 10
-                 moveBoxTo(positionx)
-				moveBoxTo(speed)
+                positionx += speed;
+                moveBoxTo(positionx)
                 if (positionx > boardWidth){
                     speed = speed * -1
                 } else if (positionx < 0){
-                    speed = speed * 1
+                    speed = speed * -1
                 }
 			};
 
